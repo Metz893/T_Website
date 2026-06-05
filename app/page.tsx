@@ -6,9 +6,11 @@ const introSlides = [
   "Hey Teagan...",
   "I may not be able to draw",
   "Or sing",
-  "But every photo with you becomes one of my favorites.",
+  "But I can build a website",
+  "And every photo with you becomes one of my favorites.",
   "And every conversation makes my day",
-  "So before you keep going...",
+  "So since you have been wanting me to",
+  "And I have been wanting it more...",
   "Turn around",
 ];
 
