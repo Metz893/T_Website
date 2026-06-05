@@ -297,22 +297,22 @@ export default function Home() {
         <div className="reasonGrid">
           <div>
             <span>01</span>
-            <p>you make normal days feel less normal</p>
+            <p>I enjoy every moment with you</p>
           </div>
 
           <div>
             <span>02</span>
-            <p>every photo with you somehow becomes special</p>
+            <p>Every photo with you somehow becomes special</p>
           </div>
 
           <div>
             <span>03</span>
-            <p>talking to you always makes my day better</p>
+            <p>Talking to you always makes my day better</p>
           </div>
 
           <div>
             <span>04</span>
-            <p>you are very easy to make a pink website for</p>
+            <p>I wnat you to be my girlfired ;)</p>
           </div>
         </div>
       </section>
