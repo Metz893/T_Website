@@ -4,11 +4,12 @@ import { useEffect, useState } from "react";
 
 const introSlides = [
   "Hey Teagan...",
-  "I made this little website for you.",
-  "Because somehow, every normal day feels better with you in it.",
-  "And every photo with you becomes one of my favorites.",
+  "I may not be able to draw",
+  "Or sing",
+  "But every photo with you becomes one of my favorites.",
+  "And every conversation makes my day",
   "So before you keep going...",
-  "turn around",
+  "Turn around",
 ];
 
 const photos = [
@@ -113,17 +114,34 @@ export default function Home() {
         reset intro
       </button>
 
+      <div className="memoryBackground">
+        <span>🌸</span>
+        <span>💗</span>
+        <span>🌷</span>
+        <span>💕</span>
+        <span>🌺</span>
+        <span>💐</span>
+      </div>
+
       <section className="heroSection">
-        <div>
+        <div className="heroSticker stickerOne">made for teagan</div>
+        <div className="heroSticker stickerTwo">pink warning</div>
+
+        <div className="heroContent">
           <p className="tinyText">a little page for you</p>
 
           <h1>Teagan 💗</h1>
 
           <p className="heroText">
-            I wanted this to feel cute, pink, and full of the little moments
-            that make me smile. No big speech on here. Just us, some memories,
-            and a reminder that you mean a lot to me.
+            No giant speech here. Just a pink little scrapbook of memories,
+            favorite photos, and all the small things that make me smile.
           </p>
+
+          <div className="heroBadges">
+            <span>🌸 favorite person</span>
+            <span>💗 makes my day</span>
+            <span>🌷 best smile</span>
+          </div>
         </div>
       </section>
 
@@ -135,25 +153,81 @@ export default function Home() {
         <span>🌸</span>
       </section>
 
+      <section className="noteSection">
+        <div className="loveNote">
+          <p className="noteLabel">tiny note</p>
+
+          <h2>some people just make everything better</h2>
+
+          <p>
+            You are one of those people. Even the random moments, blurry
+            pictures, and normal conversations somehow become things I remember.
+          </p>
+        </div>
+
+        <div className="miniPolaroid">
+          <img src={photos[0]} alt="A favorite memory with Teagan" />
+          <p>favorite memory energy</p>
+        </div>
+      </section>
+
       <section className="photoGrid">
         {photos.map((photo, index) => (
           <article className="photoCard" key={photo}>
+            <div className="tape"></div>
             <img src={photo} alt={`Memory ${index + 1} with Teagan`} />
             <p>{captions[index]}</p>
           </article>
         ))}
       </section>
 
+      <section className="reasonsSection">
+        <p className="tinyText">important evidence</p>
+
+        <h2>reasons this page exists</h2>
+
+        <div className="reasonGrid">
+          <div>
+            <span>01</span>
+            <p>you make normal days feel less normal</p>
+          </div>
+
+          <div>
+            <span>02</span>
+            <p>every photo with you somehow becomes special</p>
+          </div>
+
+          <div>
+            <span>03</span>
+            <p>talking to you always makes my day better</p>
+          </div>
+
+          <div>
+            <span>04</span>
+            <p>you are very easy to make a pink website for</p>
+          </div>
+        </div>
+      </section>
+
       <section className="endingCard">
-        <h2>one more thing...</h2>
+        <p className="tinyText">final instruction</p>
+
+        <h2>you made it to the end</h2>
 
         <p>
-          This whole thing was just my way of making the moment a little more
-          special. So now that you made it to the end...
+          This website was cute, but it was not the real point. The real point is
+          not on the screen anymore.
         </p>
 
         <h3>turn around 💐</h3>
       </section>
+
+      <button
+        className="secretFlower"
+        onClick={() => alert("secret message: you are really special to me 💗")}
+      >
+        🌸
+      </button>
     </main>
   );
 }
