@@ -1,0 +1,375 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #471527;
+  background: #ffe5ef;
+}
+
+button {
+  font-family: inherit;
+}
+
+.introPage {
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.85), transparent 28%),
+    radial-gradient(circle at 80% 10%, rgba(255, 176, 207, 0.75), transparent 30%),
+    linear-gradient(135deg, #ffe0ec, #ffb2ce, #ff75a8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  position: relative;
+}
+
+.introCard {
+  width: min(92vw, 650px);
+  min-height: 430px;
+  background: rgba(255, 255, 255, 0.84);
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  border-radius: 38px;
+  box-shadow: 0 30px 80px rgba(157, 25, 83, 0.28);
+  backdrop-filter: blur(14px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  text-align: center;
+  padding: 42px 30px;
+  position: relative;
+  z-index: 5;
+}
+
+.tinyText {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #c92369;
+  font-weight: 900;
+  font-size: 14px;
+}
+
+.introCard h1 {
+  font-size: clamp(42px, 9vw, 86px);
+  line-height: 0.95;
+  color: #9d174d;
+  max-width: 560px;
+}
+
+.turnAroundText {
+  font-size: clamp(58px, 13vw, 122px) !important;
+  color: #ff2f83 !important;
+  text-transform: lowercase;
+}
+
+.progressDots {
+  display: flex;
+  gap: 9px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #f8a5c6;
+  border-radius: 999px;
+  opacity: 0.55;
+}
+
+.activeDot {
+  width: 34px;
+  opacity: 1;
+  background: #ff3f8b;
+}
+
+.mainButton {
+  border: none;
+  background: #ff3f8b;
+  color: white;
+  padding: 16px 36px;
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 14px 30px rgba(255, 63, 139, 0.36);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.mainButton:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 18px 36px rgba(255, 63, 139, 0.46);
+}
+
+.floatingDecor {
+  position: absolute;
+  z-index: 2;
+  animation: float 5s ease-in-out infinite;
+  filter: drop-shadow(0 10px 16px rgba(138, 22, 71, 0.18));
+}
+
+.flowerOne {
+  top: 12%;
+  left: 10%;
+  font-size: 76px;
+}
+
+.flowerTwo {
+  bottom: 14%;
+  right: 10%;
+  font-size: 84px;
+  animation-delay: 1s;
+}
+
+.heartOne {
+  top: 18%;
+  right: 16%;
+  font-size: 62px;
+  animation-delay: 0.4s;
+}
+
+.heartTwo {
+  bottom: 18%;
+  left: 15%;
+  font-size: 56px;
+  animation-delay: 1.4s;
+}
+
+.softGlow {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(10px);
+  opacity: 0.7;
+}
+
+.glowOne {
+  width: 330px;
+  height: 330px;
+  background: #ffffff;
+  left: -100px;
+  bottom: -100px;
+}
+
+.glowTwo {
+  width: 360px;
+  height: 360px;
+  background: #ffc3da;
+  right: -90px;
+  top: -90px;
+}
+
+.memoryPage {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.95), transparent 24%),
+    linear-gradient(180deg, #ffe1ed 0%, #ffc0d8 42%, #fff4f8 100%);
+  padding: 34px 18px 70px;
+}
+
+.heroSection {
+  width: min(1120px, 94vw);
+  margin: 0 auto 26px;
+  min-height: 420px;
+  border-radius: 42px;
+  background:
+    linear-gradient(rgba(105, 19, 58, 0.25), rgba(105, 19, 58, 0.25)),
+    url("/photos/photo2.png") center/cover;
+  display: flex;
+  align-items: flex-end;
+  padding: 42px;
+  box-shadow: 0 28px 75px rgba(128, 22, 68, 0.25);
+  overflow: hidden;
+}
+
+.heroSection h1 {
+  color: white;
+  font-size: clamp(54px, 12vw, 120px);
+  line-height: 0.9;
+  text-shadow: 0 8px 30px rgba(54, 10, 29, 0.4);
+  margin: 10px 0 14px;
+}
+
+.heroText {
+  max-width: 620px;
+  color: white;
+  font-size: clamp(17px, 3vw, 22px);
+  line-height: 1.5;
+  text-shadow: 0 4px 20px rgba(54, 10, 29, 0.45);
+}
+
+.flowerDivider {
+  width: min(900px, 92vw);
+  margin: 20px auto 30px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 2px solid rgba(255, 255, 255, 0.86);
+  border-radius: 999px;
+  padding: 14px 18px;
+  display: flex;
+  justify-content: center;
+  gap: clamp(16px, 5vw, 52px);
+  font-size: clamp(24px, 5vw, 42px);
+  box-shadow: 0 16px 44px rgba(169, 21, 83, 0.14);
+}
+
+.resetButton {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 50;
+
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  background: linear-gradient(135deg, #ffffff, #ffe1ef);
+  color: #c92369;
+
+  padding: 12px 20px;
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.4px;
+  text-transform: lowercase;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 30px rgba(126, 24, 68, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.resetButton::before {
+  content: "↺ ";
+  font-size: 15px;
+}
+
+.resetButton:hover {
+  transform: translateY(-2px) scale(1.04);
+  background: linear-gradient(135deg, #ffffff, #ffc9dd);
+  box-shadow:
+    0 16px 36px rgba(126, 24, 68, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.resetButton:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.photoGrid {
+  width: min(1120px, 94vw);
+  margin: 0 auto;
+  columns: 3 280px;
+  column-gap: 22px;
+}
+
+.photoCard {
+  break-inside: avoid;
+  background: white;
+  border-radius: 28px;
+  padding: 14px 14px 18px;
+  margin: 0 0 22px;
+  box-shadow: 0 18px 45px rgba(136, 25, 72, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  transform: rotate(-1deg);
+}
+
+.photoCard:nth-child(even) {
+  transform: rotate(1.2deg);
+}
+
+.photoCard:nth-child(3n) {
+  transform: rotate(-0.4deg);
+}
+
+.photoCard img {
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.photoCard p {
+  text-align: center;
+  color: #9d174d;
+  font-weight: 800;
+  font-size: 16px;
+  margin-top: 13px;
+}
+
+.endingCard {
+  width: min(760px, 92vw);
+  margin: 40px auto 0;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.82);
+  border: 2px solid white;
+  border-radius: 36px;
+  padding: 38px 28px;
+  box-shadow: 0 24px 65px rgba(126, 24, 68, 0.18);
+}
+
+.endingCard h2 {
+  color: #c92369;
+  font-size: clamp(32px, 7vw, 58px);
+  margin-bottom: 12px;
+}
+
+.endingCard p {
+  color: #5b2036;
+  font-size: 19px;
+  line-height: 1.55;
+  max-width: 590px;
+  margin: 0 auto 18px;
+}
+
+.endingCard h3 {
+  color: #ff2f83;
+  font-size: clamp(38px, 9vw, 84px);
+  line-height: 1;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@media (max-width: 720px) {
+  .introCard {
+    min-height: 390px;
+  }
+
+  .heroSection {
+    min-height: 520px;
+    padding: 28px;
+    border-radius: 32px;
+  }
+
+  .flowerOne,
+  .flowerTwo {
+    font-size: 54px;
+  }
+
+  .heartOne,
+  .heartTwo {
+    font-size: 44px;
+  }
+  
+}
+
