@@ -312,7 +312,7 @@ export default function Home() {
 
           <div>
             <span>04</span>
-            <p>I wnat you to be my girlfired ;)</p>
+            <p>I want you to be my girlfriend :)</p>
           </div>
         </div>
       </section>
