@@ -208,8 +208,8 @@ export default function Home() {
           <h1>Teagan 💗</h1>
 
           <p className="heroText">
-            No giant speech here. Just a pink little scrapbook of memories,
-            favorite photos, and all the small things that make me smile.
+            Thank you for everything you do. I appreciate how sweet you are
+            and how happy you make. Thank you for always smiling!
           </p>
 
           <div className="heroBadges">
@@ -263,11 +263,11 @@ export default function Home() {
         <div className="loveNote">
           <p className="noteLabel">tiny note</p>
 
-          <h2>some people just make everything better</h2>
+          <h2>Some people just make everything better</h2>
 
           <p>
-            You are one of those people. Even the random moments, blurry
-            pictures, and normal conversations somehow become things I remember.
+            You are one of those people. Your smile lights up my day. Even the random 
+            moments, blurry pictures, and normal conversations somehow become things I remember.
           </p>
         </div>
 
@@ -314,26 +314,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <section className="endingCard">
-        <p className="tinyText">final instruction</p>
-
-        <h2>you made it to the end</h2>
-
-        <p>
-          This website was cute, but it was not the real point. The real point is
-          not on the screen anymore.
-        </p>
-
-        <h3>turn around 💐</h3>
-      </section>
-
-      <button
-        className="secretFlower"
-        onClick={() => alert("secret message: you are really special to me 💗")}
-      >
-        🌸
-      </button>
     </main>
   );
 }
