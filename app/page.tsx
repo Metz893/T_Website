@@ -36,10 +36,20 @@ const captions = [
   "even blurry pictures matter",
 ];
 
+const cuteMessages = [
+  "you found a flower 🌸",
+  "this one means you are cute 💗",
+  "secret tulip unlocked 🌷",
+  "extra heart just for you 💕",
+];
+
 export default function Home() {
   const [slide, setSlide] = useState(0);
   const [showMemories, setShowMemories] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const [cuteMessage, setCuteMessage] = useState("");
+  const [memorySurprise, setMemorySurprise] = useState("");
+  const [sparkles, setSparkles] = useState<string[]>([]);
 
   const isLastSlide = slide === introSlides.length - 1;
 
@@ -69,6 +79,29 @@ export default function Home() {
     setShowMemories(false);
   }
 
+  function clickCuteIcon(message: string) {
+    setCuteMessage(message);
+
+    setTimeout(() => {
+      setCuteMessage("");
+    }, 1600);
+  }
+
+  function clickMemoryIcon(message: string) {
+    setMemorySurprise(message);
+
+    const newSparkles = Array.from({ length: 18 }).map((_, index) => {
+      return `${Date.now()}-${index}`;
+    });
+
+    setSparkles(newSparkles);
+
+    setTimeout(() => {
+      setMemorySurprise("");
+      setSparkles([]);
+    }, 1800);
+  }
+
   if (!loaded) {
     return null;
   }
@@ -76,13 +109,42 @@ export default function Home() {
   if (!showMemories) {
     return (
       <main className="introPage">
+        {cuteMessage && <div className="cutePopup">{cuteMessage}</div>}
+
         <div className="softGlow glowOne"></div>
         <div className="softGlow glowTwo"></div>
 
-        <div className="floatingDecor flowerOne">🌸</div>
-        <div className="floatingDecor flowerTwo">🌷</div>
-        <div className="floatingDecor heartOne">💗</div>
-        <div className="floatingDecor heartTwo">💕</div>
+        <button
+          className="floatingDecor flowerOne"
+          onClick={() => clickCuteIcon(cuteMessages[0])}
+          aria-label="cute flower"
+        >
+          🌸
+        </button>
+
+        <button
+          className="floatingDecor flowerTwo"
+          onClick={() => clickCuteIcon(cuteMessages[2])}
+          aria-label="cute tulip"
+        >
+          🌷
+        </button>
+
+        <button
+          className="floatingDecor heartOne"
+          onClick={() => clickCuteIcon(cuteMessages[1])}
+          aria-label="cute heart"
+        >
+          💗
+        </button>
+
+        <button
+          className="floatingDecor heartTwo"
+          onClick={() => clickCuteIcon(cuteMessages[3])}
+          aria-label="cute pink hearts"
+        >
+          💕
+        </button>
 
         <section className="introCard">
           <p className="tinyText">for teagan</p>
@@ -110,6 +172,22 @@ export default function Home() {
 
   return (
     <main className="memoryPage">
+      {memorySurprise && <div className="memoryPopup">{memorySurprise}</div>}
+
+      <div className="sparkleLayer">
+        {sparkles.map((sparkle, index) => (
+          <span
+            key={sparkle}
+            style={{
+              left: `${(index * 17 + 9) % 100}%`,
+              top: `${(index * 23 + 14) % 100}%`,
+            }}
+          >
+            ✨
+          </span>
+        ))}
+      </div>
+
       <button className="resetButton" onClick={resetIntro}>
         reset intro
       </button>
@@ -124,9 +202,6 @@ export default function Home() {
       </div>
 
       <section className="heroSection">
-        <div className="heroSticker stickerOne">made for teagan</div>
-        <div className="heroSticker stickerTwo">pink warning</div>
-
         <div className="heroContent">
           <p className="tinyText">a little page for you</p>
 
@@ -146,11 +221,42 @@ export default function Home() {
       </section>
 
       <section className="flowerDivider">
-        <span>🌸</span>
-        <span>💗</span>
-        <span>🌷</span>
-        <span>💕</span>
-        <span>🌸</span>
+        <button
+          onClick={() => clickMemoryIcon("flower unlocked: you are very cute 🌸")}
+          aria-label="flower surprise"
+        >
+          🌸
+        </button>
+
+        <button
+          onClick={() => clickMemoryIcon("heart unlocked: you make me smile 💗")}
+          aria-label="heart surprise"
+        >
+          💗
+        </button>
+
+        <button
+          onClick={() =>
+            clickMemoryIcon("tulip unlocked: this page was made for you 🌷")
+          }
+          aria-label="tulip surprise"
+        >
+          🌷
+        </button>
+
+        <button
+          onClick={() => clickMemoryIcon("extra love unlocked 💕")}
+          aria-label="extra love surprise"
+        >
+          💕
+        </button>
+
+        <button
+          onClick={() => clickMemoryIcon("final flower unlocked 🌸")}
+          aria-label="final flower surprise"
+        >
+          🌸
+        </button>
       </section>
 
       <section className="noteSection">

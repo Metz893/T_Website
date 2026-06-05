@@ -19,6 +19,8 @@ button {
   font-family: inherit;
 }
 
+/* INTRO PAGE */
+
 .introPage {
   min-height: 100vh;
   overflow: hidden;
@@ -101,46 +103,16 @@ button {
   font-weight: 900;
   cursor: pointer;
   box-shadow: 0 14px 30px rgba(255, 63, 139, 0.36);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
 }
 
 .mainButton:hover {
   transform: translateY(-3px) scale(1.03);
   box-shadow: 0 18px 36px rgba(255, 63, 139, 0.46);
-}
-
-.floatingDecor {
-  position: absolute;
-  z-index: 2;
-  animation: float 5s ease-in-out infinite;
-  filter: drop-shadow(0 10px 16px rgba(138, 22, 71, 0.18));
-}
-
-.flowerOne {
-  top: 12%;
-  left: 10%;
-  font-size: 76px;
-}
-
-.flowerTwo {
-  bottom: 14%;
-  right: 10%;
-  font-size: 84px;
-  animation-delay: 1s;
-}
-
-.heartOne {
-  top: 18%;
-  right: 16%;
-  font-size: 62px;
-  animation-delay: 0.4s;
-}
-
-.heartTwo {
-  bottom: 18%;
-  left: 15%;
-  font-size: 56px;
-  animation-delay: 1.4s;
+  background: #ff2f83;
 }
 
 .softGlow {
@@ -165,6 +137,78 @@ button {
   right: -90px;
   top: -90px;
 }
+
+/* CLICKABLE INTRO ICONS */
+
+.floatingDecor {
+  position: absolute;
+  z-index: 6;
+  animation: float 5s ease-in-out infinite;
+  filter: drop-shadow(0 10px 16px rgba(138, 22, 71, 0.18));
+  border: none;
+  background: rgba(255, 255, 255, 0.32);
+  width: 78px;
+  height: 78px;
+  border-radius: 999px;
+  font-size: 42px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 14px 35px rgba(157, 25, 83, 0.13);
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.floatingDecor:hover {
+  transform: scale(1.12);
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 18px 42px rgba(157, 25, 83, 0.22);
+}
+
+.flowerOne {
+  top: 10%;
+  left: 8%;
+}
+
+.flowerTwo {
+  bottom: 12%;
+  right: 9%;
+  animation-delay: 1s;
+}
+
+.heartOne {
+  top: 12%;
+  right: 12%;
+  animation-delay: 0.4s;
+}
+
+.heartTwo {
+  bottom: 13%;
+  left: 10%;
+  animation-delay: 1.4s;
+}
+
+.cutePopup {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
+  background: rgba(255, 255, 255, 0.92);
+  color: #c92369;
+  border: 2px solid white;
+  border-radius: 999px;
+  padding: 13px 22px;
+  font-size: 15px;
+  font-weight: 900;
+  box-shadow: 0 14px 35px rgba(157, 25, 83, 0.2);
+  animation: popupBounce 0.25s ease;
+}
+
+/* MEMORY PAGE */
 
 .memoryPage {
   min-height: 100vh;
@@ -234,17 +278,6 @@ button {
   animation-delay: 5s;
 }
 
-@keyframes slowFloat {
-  0%,
-  100% {
-    transform: translateY(0) rotate(-4deg);
-  }
-
-  50% {
-    transform: translateY(-24px) rotate(6deg);
-  }
-}
-
 .heroSection {
   width: min(1120px, 94vw);
   margin: 0 auto 26px;
@@ -307,30 +340,6 @@ button {
   border-radius: 999px;
   font-weight: 900;
   box-shadow: 0 10px 25px rgba(74, 11, 39, 0.16);
-}
-
-.heroSticker {
-  position: absolute;
-  z-index: 3;
-  background: #fff7fb;
-  color: #c92369;
-  padding: 12px 18px;
-  border-radius: 8px;
-  font-weight: 900;
-  box-shadow: 0 12px 30px rgba(74, 11, 39, 0.18);
-  border: 1px solid white;
-}
-
-.stickerOne {
-  top: 32px;
-  right: 34px;
-  transform: rotate(6deg);
-}
-
-.stickerTwo {
-  top: 92px;
-  right: 90px;
-  transform: rotate(-5deg);
 }
 
 .flowerDivider {
@@ -429,7 +438,9 @@ button {
   border: 1px solid rgba(255, 255, 255, 0.85);
   position: relative;
   transform: rotate(-1.3deg);
-  transition: transform 0.24s ease, box-shadow 0.24s ease;
+  transition:
+    transform 0.24s ease,
+    box-shadow 0.24s ease;
 }
 
 .photoCard:nth-child(even) {
@@ -557,13 +568,17 @@ button {
   font-size: 28px;
   cursor: pointer;
   opacity: 0.5;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .secretFlower:hover {
   transform: scale(1.25) rotate(10deg);
   opacity: 1;
 }
+
+/* RESET BUTTON */
 
 .resetButton {
   position: fixed;
@@ -606,6 +621,8 @@ button {
   transform: translateY(0) scale(0.98);
 }
 
+/* ANIMATIONS */
+
 @keyframes float {
   0%,
   100% {
@@ -617,6 +634,31 @@ button {
   }
 }
 
+@keyframes slowFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+
+  50% {
+    transform: translateY(-24px) rotate(6deg);
+  }
+}
+
+@keyframes popupBounce {
+  from {
+    transform: translateX(-50%) translateY(-10px) scale(0.92);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(-50%) translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* TABLET */
+
 @media (max-width: 850px) {
   .noteSection {
     grid-template-columns: 1fr;
@@ -625,26 +667,187 @@ button {
   .reasonGrid {
     grid-template-columns: 1fr 1fr;
   }
-
-  .heroSticker {
-    display: none;
-  }
 }
 
+/* PHONE */
+
 @media (max-width: 560px) {
+  .introPage {
+    padding: 16px;
+  }
+
+  .introCard {
+    width: 100%;
+    min-height: 360px;
+    border-radius: 30px;
+    padding: 32px 22px;
+    gap: 22px;
+  }
+
+  .introCard h1 {
+    font-size: clamp(36px, 12vw, 58px);
+    line-height: 1;
+  }
+
+  .turnAroundText {
+    font-size: clamp(54px, 18vw, 86px) !important;
+  }
+
+  .floatingDecor {
+    width: 54px;
+    height: 54px;
+    font-size: 30px;
+    background: rgba(255, 255, 255, 0.42);
+  }
+
+  .flowerOne {
+    top: 20px;
+    left: 18px;
+  }
+
+  .heartOne {
+    top: 20px;
+    right: 18px;
+  }
+
+  .heartTwo {
+    bottom: 22px;
+    left: 18px;
+  }
+
+  .flowerTwo {
+    bottom: 22px;
+    right: 18px;
+  }
+
+  .cutePopup {
+    top: 14px;
+    font-size: 13px;
+    padding: 11px 17px;
+    max-width: 88vw;
+    text-align: center;
+  }
+
+  .memoryPage {
+    padding: 22px 14px 64px;
+  }
+
   .heroSection {
     min-height: 520px;
     padding: 28px;
     border-radius: 32px;
   }
 
-  .reasonGrid {
-    grid-template-columns: 1fr;
+  .heroSection::before {
+    inset: 12px;
+    border-radius: 24px;
+  }
+
+  .heroSection h1 {
+    font-size: clamp(54px, 17vw, 92px);
+  }
+
+  .heroText {
+    font-size: 17px;
+  }
+
+  .heroBadges span {
+    font-size: 13px;
+    padding: 9px 13px;
+  }
+
+  .flowerDivider {
+    font-size: 26px;
+    gap: 16px;
   }
 
   .loveNote,
   .reasonsSection,
   .endingCard {
     padding: 28px 22px;
+  }
+
+  .reasonGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .resetButton {
+    top: 14px;
+    right: 14px;
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+}
+
+.flowerDivider button {
+  border: none;
+  background: rgba(255, 255, 255, 0.78);
+  width: 58px;
+  height: 58px;
+  border-radius: 999px;
+  font-size: 30px;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(169, 21, 83, 0.12);
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.flowerDivider button:hover {
+  transform: translateY(-4px) scale(1.12) rotate(6deg);
+  background: white;
+  box-shadow: 0 18px 40px rgba(169, 21, 83, 0.22);
+}
+
+.flowerDivider button:active {
+  transform: scale(0.94);
+}
+
+.memoryPopup {
+  position: fixed;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.94);
+  color: #c92369;
+  border: 2px solid white;
+  border-radius: 999px;
+  padding: 13px 22px;
+  font-weight: 900;
+  box-shadow: 0 16px 38px rgba(126, 24, 68, 0.22);
+  animation: popupBounce 0.25s ease;
+  text-align: center;
+  max-width: 90vw;
+}
+
+.sparkleLayer {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+}
+
+.sparkleLayer span {
+  position: absolute;
+  font-size: 28px;
+  animation: sparklePop 1.4s ease forwards;
+}
+
+@keyframes sparklePop {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) rotate(0deg);
+  }
+
+  35% {
+    opacity: 1;
+    transform: scale(1.25) rotate(18deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-38px) scale(0.75) rotate(35deg);
   }
 }
